@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE dataTableConfig SYSTEM "datatable_config.dtd" >
+<dataTableConfig>
+	<!-- 天猫店铺字段映射 -->
+	<tableName>TBAS_SHOP_TMALL</tableName>
+	
+	<!-- 唯一字段 -->
+	<unique_column value="SHOP_ID" />
+	
+	<unique_sql>
+		<!-- 判断唯一值 -->
+		select count(*) from tbas_shop_tmall where SHOP_ID = :SHOP_ID
+	</unique_sql>
+	
+	<columns>
+		<column columnName="ID" defaultValue="SEQ_SHOP_TMALL.NEXTVAL" />
+		<column columnName="SHOP_ID" srcKey="SHOPID" />
+		<column columnName="SHOP_HREF" srcKey="SHOPHREF" />
+		<column columnName="SHOP_NAME" srcKey="SHOPNAME" />
+		<column columnName="KEYWORD" srcKey="KEYWORD" />
+		<column columnName="NICK" srcKey="NICK" />
+		<column columnName="WANGWANG_HREF" srcKey="WANGWANG" />
+		<column columnName="CITY" srcKey="CITY" />
+		<column columnName="SELES_NUM" srcKey="SELSENUM" />
+		<column columnName="ONSELSES_NUM" srcKey="ONSELSNUM" />
+		<column columnName="USER_ID" srcKey="USER_ID" />
+		<column columnName="ALIS_HREF" srcKey="ALIS_HREF" />
+	</columns>
+</dataTableConfig>

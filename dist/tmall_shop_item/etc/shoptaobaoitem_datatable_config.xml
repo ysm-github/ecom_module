@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE dataTableConfig SYSTEM "datatable_config.dtd" >
+<dataTableConfig>
+	<!-- 淘宝商品信息表字段映射 -->
+	<tableName>TBAS_SHOP_TAOBAL_ITEM</tableName>
+	
+	<!-- 唯一字段 -->
+	<unique_column value="ITEM_ID" />
+	
+	<unique_sql>
+		<!-- 判断唯一值 -->
+		<!-- 使用之前请针对查询列建索引 -->
+		select count(*) from TBAS_SHOP_TAOBAL_ITEM where ITEM_ID = :ITEM_ID
+	</unique_sql>
+	
+	<columns>
+		<column columnName="ID" defaultValue="SEQ_SHOP_TAOBAL_ITEM.NEXTVAL" />
+		
+		<column columnName="ITEM_ID" srcKey="ITEM_ID" /><!-- 商品ID -->
+		<column columnName="SHOP_ID" srcKey="SHOP_ID" /><!-- 店铺ID -->
+		<column columnName="TITLE" srcKey="TITLE" /><!-- 商品标题 -->
+		<column columnName="NICK" srcKey="NICK" /><!-- 商家昵称 -->
+		<column columnName="PRICE" srcKey="PRICE" /><!-- 价格 -->
+		<column columnName="DETAIL_URL" srcKey="DETAIL_URL" /><!-- 宝贝页面 -->
+		<column columnName="PROPS_NAME" srcKey="PROPS_NAME" /><!-- 属性表 -->
+		<column columnName="CREATED" srcKey="CREATED" /><!-- 发布时间 -->
+		<column columnName="VALID_THRU" srcKey="VALID_THRU" /><!-- 有效期 -->
+		<column columnName="CID" srcKey="CID" /><!-- 叶子类目ID -->
+		<column columnName="PIC_URL" srcKey="PIC_URL" /><!-- 宝贝主图 -->
+		<column columnName="NUM" srcKey="NUM" /><!-- 宝贝数量 -->
+		<column columnName="LIST_TIME" srcKey="LIST_TIME" /><!-- 上架时间 -->
+		<column columnName="DELIST_TIME" srcKey="DELIST_TIME" /><!-- 下架时间 -->
+		<column columnName="STUFF_STATUS" srcKey="STUFF_STATUS" /><!-- 商品新旧程度 全新:new，闲置:unused，二手：second -->
+		<column columnName="HAS_DISCOUNT" srcKey="HAS_DISCOUNT" /><!-- 支持会员打折,true/false -->
+		<column columnName="APPROVE_STATUS" srcKey="APPROVE_STATUS" /><!-- 商品上传后的状态。onsale出售中，instock库中 -->
+		<column columnName="PRODUCT_ID" srcKey="PRODUCT_ID" /><!-- 宝贝所属产品的id(可能为空). 该字段可以通过taobao.products.search 得到 -->
+		<column columnName="IS_VIRTUAL" srcKey="IS_VIRTUAL" /><!-- 虚拟商品的状态字段 -->
+		<column columnName="IS_TAOBAO" srcKey="IS_TAOBAO" /><!-- 是否在淘宝显示 -->
+		<column columnName="IS_EX" srcKey="IS_EX" /><!-- 是否在外部网店显示 -->
+		<column columnName="IS_3D" srcKey="IS_3D" /><!-- 是否是3D淘宝的商品 -->
+		<column columnName="SECOND_KILL" srcKey="SECOND_KILL" /><!-- 是否24小时闪电发货 -->
+		<column columnName="IS_LIGHTNING_CONSIGNMENT" srcKey="IS_LIGHTNING_CONSIGNMENT" /><!-- 是否24小时闪电发货 -->
+		<column columnName="FREIGHT_PAYER" srcKey="FREIGHT_PAYER" /><!-- 运费承担方式,seller（卖家承担），buyer(买家承担） -->
+		<column columnName="COUNTRY" srcKey="COUNTRY" /><!-- 国家 -->
+		<column columnName="STATE" srcKey="STATE" /><!-- 省 -->
+		<column columnName="CITY" srcKey="CITY" /><!-- 市 -->
+		<column columnName="DISTRICT" srcKey="DISTRICT" /><!-- 区（县） -->
+		<column columnName="ADDRESS" srcKey="ADDRESS" /><!-- 详细地址 -->
+		<column columnName="ZIP" srcKey="ZIP" /><!-- 邮编 -->
+	</columns>
+</dataTableConfig>

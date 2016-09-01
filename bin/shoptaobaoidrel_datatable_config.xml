@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE dataTableConfig SYSTEM "datatable_config.dtd" >
+<dataTableConfig>
+	<!-- 淘宝店铺ID信息表字段映射 -->
+	<tableName>TBAS_SHOP_TAOBAO_IDREL</tableName>
+	
+	<!-- 唯一字段 -->
+	<unique_column value="SHOP_ID" />
+	
+	<unique_sql>
+		<!-- 判断唯一值 -->
+		<!-- 使用之前请针对查询列建索引 -->
+		select count(*) from TBAS_SHOP_TAOBAO_IDREL where SHOP_ID = :SHOP_ID
+	</unique_sql>
+	
+	<columns>
+		<column columnName="SHOP_ID" srcKey="SHOP_ID" />
+		<column columnName="USER_ID" srcKey="USER_ID" />
+		<column columnName="USER_NICK" srcKey="USER_NICK" />
+		<column columnName="ALIS_HREF" srcKey="ALIS_HREF" />
+		<column columnName="HREF" srcKey="HREF" />
+		<column columnName="CREATEDATE" defaultValue="sysdate" />
+	</columns>
+</dataTableConfig>

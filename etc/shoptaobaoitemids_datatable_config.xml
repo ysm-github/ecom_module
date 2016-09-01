@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE dataTableConfig SYSTEM "datatable_config.dtd" >
+<dataTableConfig>
+	<!-- 各个淘宝店铺所对应的商品ID信息表字段映射 -->
+	<tableName>TBAS_SHOP_TAOBAL_ITEMIDS</tableName>
+	
+	<!-- 唯一字段 -->
+	<unique_column value="ITEM_ID" />
+	
+	<unique_sql>
+		<!-- 判断唯一值 -->
+		select count(*) from TBAS_SHOP_TAOBAL_ITEMIDS where SHOP_ID = :SHOP_ID and ITEM_ID = :ITEM_ID
+	</unique_sql>
+	
+	<columns>
+		<column columnName="ID" defaultValue="SEQ_SHOP_TAOBAL_ITEMIDS.NEXTVAL" />
+		<column columnName="CRT_DATE" defaultValue="sysdate" />
+		<column columnName="SHOP_ID" srcKey="SHOP_ID" />
+		<column columnName="ITEM_ID" srcKey="ITEM_ID" />
+		<column columnName="USER_NICK" srcKey="USER_NICK" />
+	</columns>
+</dataTableConfig>

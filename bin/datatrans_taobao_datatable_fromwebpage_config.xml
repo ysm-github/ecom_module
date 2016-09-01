@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE dataTableConfig SYSTEM "datatable_config.dtd" >
+<dataTableConfig>
+	<!-- 天猫店铺字段映射 -->
+	<tableName>tbas_mobilephone_taobao</tableName>
+	
+	<!-- 唯一字段 -->
+	<unique_column value="WEBMOBLEID" />
+	
+	<unique_sql>
+		<!-- 判断唯一值 -->
+		<!-- 使用之前请针对查询列建索引 -->
+		select count(*) from tbas_mobilephone_taobao where WEBMOBLEID = :WEBMOBLEID
+	</unique_sql>
+	
+	<columns>
+		<column columnName="MOBLEID" defaultValue="SEQ_SHOP_TAOBAL_ITEM.NEXTVAL" />
+		<column columnName="CLASSNAME" defaultValue="'手机'" />
+		<column columnName="URL" srcKey="DETAIL_URL" />
+		<column columnName="HEADURL" defaultValue="'http://a.m.taobao.com/i'" />
+		<column columnName="BIDNAME" defaultValue="'notfound'" />
+		<column columnName="WEBMOBLEID" srcKey="ITEM_ID" />
+		<column columnName="DOMAIN" defaultValue="'taobao.com'" />
+		<column columnName="DOMAINNAME" defaultValue="'淘宝'" />
+		<column columnName="CREATEDATE" defaultValue="sysdate" />
+		<column columnName="BEGINSTR" defaultValue="'com/'" />
+		<column columnName="ENDSTR" defaultValue="'.htm'" />
+		<column columnName="MOBILEPRICE" srcKey="PRICE" />
+		<column columnName="MOBILEBRAND" srcKey="MOBILEBRAND" />
+		<column columnName="MOBILETYPE" srcKey="MOBILETYPE" />
+		<column columnName="MOBILECOLOR" srcKey="MOBILECOLOR" />
+		<column columnName="MOBILEOS" srcKey="MOBILEOS" />
+		<column columnName="MOBILEMARKETTIME" srcKey="MOBILEMARKETTIME" />
+		<column columnName="MOBILESCREENSIZE" srcKey="MOBILESCREENSIZE" />
+		<column columnName="MOBLECAMERA" srcKey="MOBLECAMERA" />
+		<column columnName="MOBLEWIFI" srcKey="MOBLEWIFI" />
+		<column columnName="MOBLENETWORKSTANDARD" srcKey="MOBLENETWORKSTANDARD" />
+		<column columnName="MOBLEBODYMEMORY" srcKey="MOBLEBODYMEMORY" />
+		<column columnName="MOBLERUNNINGMEMORY" srcKey="MOBLERUNNINGMEMORY" />
+		<column columnName="MOBLECPUNUMBER" srcKey="MOBLECPUNUMBER" />
+		<column columnName="MOBLECPUFREQUENCY" srcKey="MOBLECPUFREQUENCY" />
+		<column columnName="MOBILEPRICESALES" srcKey="MOBILEPRICESALES" />
+		<column columnName="REMARK" srcKey="PROPS_NAME" />
+		<column columnName="TITLE" srcKey="TITLE" />
+	</columns>
+</dataTableConfig>

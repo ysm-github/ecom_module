@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE dataTableConfig SYSTEM "datatable_config.dtd" >
+<dataTableConfig>
+	<tableName>TBAS_ECOM_GOODS</tableName>
+	
+	<!-- 唯一字段 -->
+	<unique_column value="GOODSID" />
+	
+	<unique_sql>
+		<!-- 判断唯一值 -->
+		select count(*) from TBAS_ECOM_GOODS where DOMAIN = 'tmall.com' and GOODSID = :GOODSID
+	</unique_sql>
+	
+	<columns>
+		<column columnName="ID" defaultValue="SEQ_MOBILE_PARAM_PCPOP.NEXTVAL" />
+		<column columnName="SYSURLMD5" srcKey="SYSURLMD5" />
+		<column columnName="SRCCLASSNAME" srcKey="SRCCLASSNAME" />
+		<column columnName="SRCCLASSID" srcKey="SRCCLASSID" />
+		<!-- 
+		<column columnName="SYSCLASSID" srcKey="SYSCLASSID" />
+		 -->
+		<column columnName="URL" srcKey="URL" />
+		
+		<column columnName="HEADURL" defaultValue="'http://a.m.tmall.com/'" />
+		<column columnName="BIDNAME" defaultValue="'notfound'" />
+		<column columnName="DOMAIN" defaultValue="'tmall.com'" />
+		<column columnName="DOMAINNAME" defaultValue="'天猫'" />
+		<column columnName="CREATEDATE" defaultValue="sysdate" />
+		<column columnName="BEGINSTR" defaultValue="'tmall.com/i'" />
+		<column columnName="ENDSTR" defaultValue="'.htm'" />
+		
+		<column columnName="GOODSID" srcKey="GOODSID" />
+		<column columnName="GOODSBRAND" srcKey="GOODSBRAND" />
+		<column columnName="GOODSMODEL" srcKey="GOODSMODEL" />
+		<column columnName="GOODSPRICE" srcKey="GOODSPRICE" />
+		<!-- 
+		 -->
+		<column columnName="TITLE" srcKey="TITLE" />
+		<!-- 
+		<column columnName="GOODSPRICEURL" srcKey="GOODSPRICEURL" />
+		<column columnName="REMARK" srcKey="REMARK" />
+		<column columnName="EXTPARAM" srcKey="EXTPARAM" />
+		 -->
+	</columns>
+</dataTableConfig>
